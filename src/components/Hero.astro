@@ -223,7 +223,7 @@
     </div>
 
     <div class="hidden py-6 md:block">
-      <img src="/hero/dino.svg" alt="Ragnohacks Dino" class="w-full p-5" />
+      <img src="/hero/dino.svg" alt="Ragnohacks Dino" class="w-full p-5 transition-transform duration-1000" id="dino" />
     </div>
   </div>
   <div class="absolute bottom-0 left-0 right-0 top-16 md:top-20 -z-10">
@@ -237,3 +237,16 @@
     </div>
   </div>
 </section>
+
+<script lang="ts">
+  const dino = document.getElementById("dino");
+
+  window.addEventListener("scroll", () => {
+    let scrollPos = window.scrollY;
+    if (scrollPos > 5) {
+      dino.classList.add("rotate-2");
+    } else {
+      dino.classList.remove("rotate-2");
+    }
+    });
+</script>
